@@ -4,7 +4,9 @@
 
 int sum_of_divisors(int x, size_t *count);
 int array_sum(int *begin, int *end);
-
+void array_reverse (int *begin, int *end);
+void swap (int *a, int *b);
+void print_array(int *begin,int *end);
 
 int main(void){
 	/*
@@ -15,19 +17,43 @@ int main(void){
 	printf("res = %d\n", res);
 	printf("count = %zu\n", count);
 	*/
-
 	int array[10] = {1,2,3,4,5,6,7,8,9,10};
 	int *begin = array;
 	int *end = begin +10;
-	int res = array_sum(&begin,&end);
+	/*
+	int res = array_sum(begin,end);
 	printf ("array sum = %d (sum of 1+2+3+4+5+6+7+8+9+10)\n",res);
+	*/
+	print_array(begin,end);
+	array_reverse(begin,end);
+	print_array(begin,end);
 	return 0;
+}
+
+
+void print_array(int *begin, int *end){
+	for(;begin<end;++begin)
+		printf("%d,",*begin);
+	printf ("\n");
+}
+
+void swap (int *a, int *b){
+	int c = *a;
+	*a = *b;
+	*b = *a;
+}
+
+void array_reverse (int *begin, int *end){
+	int mid =begin+(end - begin)/2;
+	for (int i = 0; i < mid; i++){
+		swap ((begin+i),(end-1-i));
+	}
 }
 
 int array_sum(int *begin, int *end){
 	int res = 0;
-	for(int i = 0;i < (begin - end); i++){
-		res += *(begin + i);
+	for(;begin < end; ++begin){
+		res += *begin;
 	}
 	return res;	
 }
