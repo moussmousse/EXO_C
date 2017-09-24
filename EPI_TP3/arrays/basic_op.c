@@ -44,9 +44,9 @@ void swap (int *a, int *b){
 }
 
 void array_reverse (int *begin, int *end){
-	int mid =begin+(end - begin)/2;
-	for (int i = 0; i < mid; i++){
-		swap ((begin+i),(end-1-i));
+	int* mid =begin+(end - begin)/2;
+	for (; begin < mid; ++begin){
+		swap ((begin),(--end));
 	}
 }
 
