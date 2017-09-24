@@ -44,7 +44,9 @@ size_t array_bin_search(int array[], size_t len, int x)
 {
 	size_t left = 0; size_t right = len -1; 
 	size_t mid = left + (right-left)/2;
-	while (left != right && array[mid] != x){
+	while (left != right && array[mid] != x && left != mid){
+		printf("%zu,%zu,%zu\n",left,mid,right);
+		
 		if (array[mid] > x)
 			left = mid;
 		else 
