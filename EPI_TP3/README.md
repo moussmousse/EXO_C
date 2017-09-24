@@ -1,2 +1,2 @@
 #EPI_TP3
-Practical C about Pointers
+Practical session about Pointers in C
