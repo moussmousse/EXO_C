@@ -7,6 +7,8 @@ void array_reverse (int *begin, int *end);
 void swap (int *a, int *b);
 void print_array(int *begin,int *end);
 void array_copy(int *dst, int *begin, int *end);
+void array_rshift(int *begin, int *end);
+
 int main(void){
   /*
   int x = 27;
@@ -28,6 +30,7 @@ int main(void){
   print_array(begin,end);
   */
 
+  /*
   int array[]={1,2,3,4,5,6,7,8,9,10};
   int *begin = array;
   int *end = begin + 10;
@@ -37,9 +40,20 @@ int main(void){
   int *end1 = begin1 +10;
   print_array(begin,end);
   print_array(begin1,end1);
+  */
+  int array[]={0,1,2,3,4,5};
+  int *begin = array;
+  int *end = begin + 6;
+  print_array(begin,end);
+  array_rshift(begin,end);
+  print_array(begin,end);
   return 0;
 }
 
+void array_rshift(int *begin, int *end){
+  for (;begin<end-1;--end)
+    *end = *(--end);
+}
 
 void array_copy(int *dst, int *begin, int *end){
   for (;begin<end;++begin)
