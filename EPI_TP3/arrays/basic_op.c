@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <err.h>
 
 int sum_of_divisors(int x, size_t *count);
 int array_sum(int *begin, int *end);
@@ -51,8 +52,9 @@ int main(void){
 }
 
 void array_rshift(int *begin, int *end){
-  for (;begin<end-1;--end)
-    *end = *(--end);
+  end--;
+  for (;begin<end;--end)
+    *end = *(end-1);
 }
 
 void array_copy(int *dst, int *begin, int *end){
