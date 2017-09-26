@@ -32,3 +32,16 @@ void array_insert_bin(int *begin, int *end, int x){
   array_rshift(mid,end);
   *mid = x;
 }
+
+void array_insert_sort(int *begin, int *end){
+  int *tab = malloc(sizeof(int)*(end-begin));
+  int *endtab = tab + (end-begin);
+  *tab=*begin;
+  begin++
+  for(;begin<end;++begin){
+    array_insert(tab,endtab,*begin); // Vérifier la comparaison dans
+  }				     // entre NULL & int in insert
+}
+
+
+void array_insert_sort_bin(
