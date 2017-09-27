@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <err.h>
 
 void array_shift(int *begin, int *end);
 void array_insert(int *begin, int *end, int x);
@@ -22,7 +23,7 @@ int main (){
 
 void print_array(int *begin, int *end){
   for(;begin<end;++begin)
-    printf("%d",*begin);
+    warnx("%d",*begin);
   printf("\n");
 }
 
