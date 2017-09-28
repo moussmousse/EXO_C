@@ -71,12 +71,17 @@ int list_is_sorted(struct list *list)
 
 void list_rev(struct list *list)
 {
-  int mid = list_len(list);
-  
-
+  struct list *prev=NULL;
+  struct list *current=*list;
+  struct next = NULL;
+  while (current != NULL)
+  {
+    next = current->next;
+    current->next=prev;
+    prev = current;
+    current=next;
+  }
+  *list=prev;
 }
-
-
-//0->X->Y->Z->K->A->B
 
 
