@@ -77,6 +77,6 @@ void list_rev(struct list *list)
 }
 
 
-0->X->Y->Z->K->A->B
+//0->X->Y->Z->K->A->B
 
 
